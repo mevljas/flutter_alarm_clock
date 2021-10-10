@@ -2,7 +2,7 @@ name: flutter_alarm_clock
 description: Android Alarm Clock Plugin for Flutter.
 version: 0.0.1
 homepage: http://sebastjanmevlja.tech/
-repository:
+repository: https://github.com/mevljas/flutter_alarm_clock
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

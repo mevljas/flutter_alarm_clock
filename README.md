@@ -62,7 +62,7 @@ Feel free to add support for additional functionality.
 
 ## Example App
 #### Screenshot
-![screenshot](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example.png)
+<img src="https://github.com/mevljas/flutter_alarm_clock/blob/main/example/screenshots/example.png?raw=true" alt="screenshot" height="500"/>
 
 #### Code
 
