@@ -1,4 +1,5 @@
 # Android Alarm Clock Plugin for Flutter
+[![pub package](https://img.shields.io/pub/v/url_launcher.svg)](https://pub.dev/packages/flutter_alarm_clock)
 
 This plugin allows Flutter apps to operate with the default clock application when the platform
 is Android. Provides a lightweight wrapper around clock app intents. It uses Android intents to communicate with the default clock app.
