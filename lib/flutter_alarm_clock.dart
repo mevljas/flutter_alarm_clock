@@ -6,6 +6,9 @@ import 'package:flutter/services.dart';
 class FlutterAlarmClock {
   static const MethodChannel _channel = MethodChannel('flutter_alarm_clock');
 
+  /// Show Alarms
+  ///
+  /// Opens default clock app showing alarms.
   static void showAlarms() {
     try {
       if (Platform.isAndroid) {
@@ -18,6 +21,9 @@ class FlutterAlarmClock {
     }
   }
 
+  /// Show Timers
+  ///
+  /// Opens default clock app showing timers.
   static void showTimers() {
     try {
       if (Platform.isAndroid) {
@@ -30,6 +36,12 @@ class FlutterAlarmClock {
     }
   }
 
+  /// Create an alarm.
+  ///
+  /// 'hour' specifies alarm hour
+  /// 'minutes' specifies alarm minutes
+  /// 'title' specifies alarm title - optional
+  /// 'skipUi' specifies whether clock app should open or not - optional
   static void createAlarm(int hour, int minutes,
       {String title = "", bool skipUi = true}) {
     try {
@@ -48,6 +60,12 @@ class FlutterAlarmClock {
     }
   }
 
+  ///Create a Timer
+  ///
+  /// Create a new timer. Function arguments:
+  /// 'length' specifies timer length in seconds
+  /// 'title' specifies timer title - optional
+  /// 'skipUi' specifies whether clock app should open or not - optional
   static void createTimer(int length, {String title = "", bool skipUi = true}) {
     try {
       if (Platform.isAndroid) {

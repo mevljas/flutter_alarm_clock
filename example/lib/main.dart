@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
