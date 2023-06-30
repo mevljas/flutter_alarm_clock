@@ -89,3 +89,4 @@ lint/tmp/
 
 .packages
 .pub/
+.idea
