@@ -7,7 +7,7 @@ on:
     branches: ['main']
 
 jobs:
-  test:
+  analyze:
     runs-on: ubuntu-latest
 
     steps:

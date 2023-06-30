@@ -7,24 +7,27 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+*' # for tags like: 'v1.2.3'
 
 jobs:
-  test:
-    name: analyze
+  analyze:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3.5.3
       - uses: dart-lang/setup-dart@v1
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.10.5'
+          channel: 'stable'
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
 
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
 
       - name: Analyze project source
-        run: dart analyze
+        run: flutter analyze
   publish:
-    needs: test
+    needs: analyze
     permissions:
       id-token: write # Required for authentication using OIDC
     uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
