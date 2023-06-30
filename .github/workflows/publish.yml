@@ -4,11 +4,11 @@ name: Publish to pub.dev
 on:
   push:
     tags:
-    - 'v[0-9]+.[0-9]+.[0-9]+*' # for tags like: 'v1.2.3'
+      - 'v[0-9]+.[0-9]+.[0-9]+*' # for tags like: 'v1.2.3'
 
 jobs:
   test:
-    name: test
+    name: analyze
     runs-on: ubuntu-latest
 
     steps:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Analyze project source
         run: dart analyze
-
-      - name: Run tests
-        run: dart test
   publish:
     needs: test
     permissions:

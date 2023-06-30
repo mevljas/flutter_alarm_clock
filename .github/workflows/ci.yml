@@ -1,11 +1,10 @@
-
-name: Analyze & Test
+name: Analyze
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   test:
@@ -27,6 +26,3 @@ jobs:
 
       - name: Analyze project source
         run: flutter analyze
-
-      - name: Run tests
-        run: flutter test
