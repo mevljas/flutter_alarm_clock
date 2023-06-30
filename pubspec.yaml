@@ -1,6 +1,6 @@
 name: flutter_alarm_clock
 description: A lightweight flutter package connecting android clock app intents.
-version: 0.1.0
+version: 0.1.1
 homepage: https://sebastjanmevlja.tk/
 repository: https://github.com/mevljas/flutter_alarm_clock
 
