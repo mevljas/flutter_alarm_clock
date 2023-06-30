@@ -5,7 +5,11 @@ void main() {
   runApp(const MyApp());
 }
 
+/// {@template myApp}
+/// A main class for the Flutter alarm clock example application.
+/// {@endtemplate}
 class MyApp extends StatefulWidget {
+  /// @{@macro myApp}
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -26,56 +30,55 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Flutter alarm clock example'),
         ),
         body: Center(
-            child: Column(children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(25),
-            child: TextButton(
-              child: const Text(
-                'Create alarm at 23:59',
-                style: TextStyle(fontSize: 20.0),
+          child: Column(
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: TextButton(
+                  child: const Text(
+                    'Create alarm at 23:59',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    FlutterAlarmClock.createAlarm(hour: 23, minutes: 59);
+                  },
+                ),
               ),
-              onPressed: () {
-                FlutterAlarmClock.createAlarm(23, 59);
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(25),
-            child: TextButton(
-              child: const Text(
-                'Show alarms',
-                style: TextStyle(fontSize: 20.0),
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: const TextButton(
+                  onPressed: FlutterAlarmClock.showAlarms,
+                  child: Text(
+                    'Show alarms',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
               ),
-              onPressed: () {
-                FlutterAlarmClock.showAlarms();
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(25),
-            child: TextButton(
-              child: const Text(
-                'Create timer for 42 seconds',
-                style: TextStyle(fontSize: 20.0),
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: TextButton(
+                  child: const Text(
+                    'Create timer for 42 seconds',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    FlutterAlarmClock.createTimer(length: 42);
+                  },
+                ),
               ),
-              onPressed: () {
-                FlutterAlarmClock.createTimer(42);
-              },
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(25),
-            child: TextButton(
-              child: const Text(
-                'Show Timers',
-                style: TextStyle(fontSize: 20.0),
+              Container(
+                margin: const EdgeInsets.all(25),
+                child: const TextButton(
+                  onPressed: FlutterAlarmClock.showTimers,
+                  child: Text(
+                    'Show Timers',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
               ),
-              onPressed: () {
-                FlutterAlarmClock.showTimers();
-              },
-            ),
+            ],
           ),
-        ])),
+        ),
       ),
     );
   }

@@ -1,4 +1,4 @@
-package tech.sebastjanmevlja.flutter_alarm_clock
+package tk.sebastjanmevlja.flutter_alarm_clock
 
 import android.app.Activity
 import android.content.Context
