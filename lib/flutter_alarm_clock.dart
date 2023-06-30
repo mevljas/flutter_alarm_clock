@@ -3,47 +3,52 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
+/// A [FlutterAlarmClock] class for interacting with Android alarm clock
+/// using Android intents.
 class FlutterAlarmClock {
   static const MethodChannel _channel = MethodChannel('flutter_alarm_clock');
 
-  /// Show Alarms
+  /// Shows the alarms.
   ///
-  /// Opens default clock app showing alarms.
+  /// Opens the default clock app showing alarms.
   static void showAlarms() {
     try {
       if (Platform.isAndroid) {
         _channel.invokeMethod('showAlarms');
       } else {
-        throw UnimplementedError;
+        throw UnimplementedError();
       }
     } on PlatformException {
-      debugPrint("Error showing alarms.");
+      debugPrint('Error showing alarms.');
     }
   }
 
-  /// Show Timers
+  /// Shows the timers.
   ///
-  /// Opens default clock app showing timers.
+  /// Opens the default clock app showing timers.
   static void showTimers() {
     try {
       if (Platform.isAndroid) {
         _channel.invokeMethod('showTimers');
       } else {
-        throw UnimplementedError;
+        throw UnimplementedError();
       }
     } on PlatformException {
-      debugPrint("Error showing timers.");
+      debugPrint('Error showing timers.');
     }
   }
 
-  /// Create an alarm.
+  /// Creates an alarm at the specified [hour] and [minutes].
   ///
-  /// 'hour' specifies alarm hour
-  /// 'minutes' specifies alarm minutes
-  /// 'title' specifies alarm title - optional
-  /// 'skipUi' specifies whether clock app should open or not - optional
-  static void createAlarm(int hour, int minutes,
-      {String title = "", bool skipUi = true}) {
+  /// Optionally alarm's [title] can also be specified and
+  /// whether clock app should open or not
+  /// using the [skipUi] flag.
+  static void createAlarm({
+    required int hour,
+    required int minutes,
+    String title = '',
+    bool skipUi = true,
+  }) {
     try {
       if (Platform.isAndroid) {
         _channel.invokeMethod('createAlarm', <String, dynamic>{
@@ -53,20 +58,23 @@ class FlutterAlarmClock {
           'skipUi': skipUi,
         });
       } else {
-        throw UnimplementedError;
+        throw UnimplementedError();
       }
     } on PlatformException {
-      debugPrint("Error creating an alarm.");
+      debugPrint('Error creating an alarm.');
     }
   }
 
-  ///Create a Timer
+  /// Creates a timer with a specified [length] in seconds.
   ///
-  /// Create a new timer. Function arguments:
-  /// 'length' specifies timer length in seconds
-  /// 'title' specifies timer title - optional
-  /// 'skipUi' specifies whether clock app should open or not - optional
-  static void createTimer(int length, {String title = "", bool skipUi = true}) {
+  /// Optionally timer's [title] can also be specified and
+  /// whether clock app should open or not
+  /// using the [skipUi] flag.
+  static void createTimer({
+    required int length,
+    String title = '',
+    bool skipUi = true,
+  }) {
     try {
       if (Platform.isAndroid) {
         _channel.invokeMethod('createTimer', <String, dynamic>{
@@ -75,10 +83,10 @@ class FlutterAlarmClock {
           'skipUi': skipUi,
         });
       } else {
-        throw UnimplementedError;
+        throw UnimplementedError();
       }
     } on PlatformException {
-      debugPrint("Error creating a timer.");
+      debugPrint('Error creating a timer.');
     }
   }
 }
