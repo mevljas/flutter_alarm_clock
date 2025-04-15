@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tk.sebastjanmevlja.flutter_alarm_clock_example">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="flutter_alarm_clock_example"
         android:icon="@mipmap/ic_launcher">
